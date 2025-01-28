@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: install dependencies
+        run: sudo apt-get update && sudo apt-get install -y unzip
       - name: test
         run: make build test
       - name: test extension
